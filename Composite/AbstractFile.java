@@ -1,0 +1,4 @@
+interface AbstractFile {
+
+	void displayInfo();
+}
