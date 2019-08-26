@@ -5,8 +5,7 @@ public class Survey
 	public SurveyState _createdSurvey;
 	public SurveyState _currentState;
 
-	public Survey() 
-	{
+	public Survey() {
 		_openedSurvey = new OpenedSurveyState(this);
 		_closedSurvey = new ClosedSurveyState(this);
 		_createdSurvey = new CreatedSurveyState(this);
