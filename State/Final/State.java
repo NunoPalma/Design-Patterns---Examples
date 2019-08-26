@@ -1,5 +1,12 @@
-public class Survey
-{
+import java.util.Scanner;  //Used for testing purposes
+
+public interface SurveyState {
+	void openSurvey();
+	void closeSurvey();
+	void getCurrentState();
+}
+
+public class Survey {
 	public SurveyState _openedSurvey;
 	public SurveyState _closedSurvey;
 	public SurveyState _createdSurvey;
@@ -32,8 +39,7 @@ public class Survey
 
 }
 
-public class OpenedSurveyState implements SurveyState 
-{
+public class OpenedSurveyState implements SurveyState {
 	public Survey _survey;
 
 	public OpenedSurveyState(Survey survey) {
@@ -55,38 +61,7 @@ public class OpenedSurveyState implements SurveyState
 	
 }
 
-public interface SurveyState
-{
-	void openSurvey();
-	void closeSurvey();
-	void getCurrentState();
-}
-
-public class ClosedSurveyState implements SurveyState
-{
-
-	public Survey _survey;
-
-	public ClosedSurveyState(Survey survey) {
-		_survey = survey;
-	}
-	
-	public void openSurvey() {
-		System.out.println("The survey has been opened.");
-		_survey.setSurveyState(_survey.getOpenedSurveyState());
-	}
-	
-	public void closeSurvey() {
-		System.out.println("The survey is already closed.");
-	}
-
-	public void getCurrentState() { 
-		System.out.println("The survey is currently closed."); 
-	}
-}
-
-public class CreatedSurveyState implements SurveyState
-{
+public class CreatedSurveyState implements SurveyState {
 	public Survey _survey;	
 
 	CreatedSurveyState(Survey survey) {
@@ -105,4 +80,63 @@ public class CreatedSurveyState implements SurveyState
 		System.out.println("The survey hasn't been open yet.");
 	}	
 
+}
+
+public class ClosedSurveyState implements SurveyState {
+	public Survey _survey;
+
+	public ClosedSurveyState(Survey survey) {
+		_survey = survey;
+	}
+	
+	public void openSurvey() {
+		System.out.println("The survey has been opened.");
+		_survey.setSurveyState(_survey.getOpenedSurveyState());
+	}
+	
+	public void closeSurvey() {
+		System.out.println("The survey is already closed.");
+	}
+
+	public void getCurrentState() { 
+		System.out.println("The survey is currently closed."); 
+	}
+
+}
+
+public class Test {
+	public static void main(String args[]) {
+
+		Scanner _scanner = new Scanner(System.in);
+		Survey _survey = new Survey();
+		String _input;
+
+		while (true) {
+			printMenu();
+			_input = _scanner.nextLine();
+			switch (_input) {
+				case "1":
+					_survey.openSurvey();
+					break;
+				case "2":
+					_survey.closeSurvey();
+					break;
+				case "3":
+					_survey.getCurrentStateInfo();
+					break;
+				case "4":
+					System.exit(0);
+				default:
+					break;
+			}
+		}
+	}
+	
+	public static void printMenu() {
+		System.out.println("Choose an option." + "\n" + 
+						"Press 1 to open the survey." + "\n" + 
+						"Press 2 to close the survey." + "\n" +
+						"Press 3 to check the survey state." + "\n" +
+						"Press 4 to exit." + "\n");
+	}
 }

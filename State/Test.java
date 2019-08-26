@@ -27,6 +27,7 @@ public class Test {
 			}
 		}
 	}
+	
 	public static void printMenu() {
 		System.out.println("Choose an option." + "\n" + 
 						"Press 1 to open the survey." + "\n" + 
