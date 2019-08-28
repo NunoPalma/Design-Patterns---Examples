@@ -10,7 +10,7 @@ public class Teacher extends Person implements Element {
 		return _subject;
 	}
 
-	public void accept(InformationVisitor visitor) {
+	public void accept(Visitor visitor) {
 		visitor.visitTeacher(this);
 	}
 }

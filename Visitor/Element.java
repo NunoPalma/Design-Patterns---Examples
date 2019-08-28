@@ -1,3 +1,3 @@
 interface Element {
-	void accept(InformationVisitor visitor);
+	void accept(Visitor visitor);
 }

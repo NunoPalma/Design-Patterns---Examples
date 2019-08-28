@@ -10,7 +10,7 @@ public class Student extends Person implements Element {
 		return _id;
 	}
 
-	public void accept(InformationVisitor visitor) {
+	public void accept(Visitor visitor) {
 		visitor.visitStudent(this);
 	}
 }
