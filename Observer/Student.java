@@ -4,7 +4,7 @@ public class Student implements Observer {
 	private ArrayList<String> _messages;
 	private String _name;
 	
-	public Student(String name) {
+	public Student(String name, Observable observerable) {
 		_name = name;
 		_messages = new ArrayList<String>();
 	}
