@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Notification implements Subject {
+public class Notification implements Observable {
 	private ArrayList<Observer> _observers;
 	private String _message;
 
