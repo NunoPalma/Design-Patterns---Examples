@@ -1,8 +1,8 @@
 public class UserProxy implements UserInformation {
-	private UserInformation _user;
+	private User _user;
 
-	public UserProxy(UserInformation user) {
-		_user = user;
+	public UserProxy(String userName) {
+		_user = new User(userName);
 	}
 
 	public String getUserName() {

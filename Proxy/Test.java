@@ -1,14 +1,11 @@
 public class Test {
 
 	public static void main(String args[]) {
-		UserInformation user = new User("Generic User");
-		UserInformation userProxy = new UserProxy(user);
+		UserInformation userProxy = new UserProxy("Generic User");
 
 		System.out.println("Username: " + userProxy.getUserName());
-
 		
-		/* user and userProxy have no access to the getId() method
-		System.out.println("Id: " + user.getId());
+		/* UserProxy has no access to the User's method getId()
 		System.out.println("Id: " + userProxy.getId());
 		*/
 	}
