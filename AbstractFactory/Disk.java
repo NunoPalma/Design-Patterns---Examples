@@ -1,3 +1,3 @@
-interface Disk {
-	public String displayInformation();
+public abstract class Disk {
+	public abstract String displayInformation();
 }

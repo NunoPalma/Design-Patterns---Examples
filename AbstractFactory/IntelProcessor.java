@@ -1,4 +1,4 @@
-public class IntelProcessor implements Processor {
+public class IntelProcessor extends Processor {
 
 	public String displayInformation() {
 		return "Intel processor has been added.";

@@ -1,4 +1,4 @@
-interface AbstractFactory {
-	public Disk getDisk();
-	public Processor getProcessor();
+public abstract class AbstractFactory {
+	public abstract Disk getDisk();
+	public abstract Processor getProcessor();
 }
